@@ -64,9 +64,9 @@ body {
 
 .news-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 20px;
 }
 
 .news-card {
@@ -84,6 +84,50 @@ body {
 
 .news-card h3 {
     padding: 1rem;
+}
+
+.rankings-container {
+    overflow-x: auto; /* Enables horizontal scrolling for small screens */
+    padding: 20px;
+}
+
+.rankings-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.rankings-table th, .rankings-table td {
+    padding: 12px 15px;
+    text-align: left;
+}
+
+.rankings-table thead {
+    background-color: #d32f2f; /* Red boxing theme */
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.rankings-table tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.rankings-table tbody tr:hover {
+    background-color: #ffebee; /* Light red highlight on hover */
+    transition: background-color 0.3s ease-in-out;
+}
+
+.rankings-table th {
+    border-bottom: 2px solid #b71c1c; /* Slightly darker red */
+}
+
+.rankings-table td {
+    border-bottom: 1px solid #ddd;
 }
 
 .news-card p {
@@ -117,5 +161,15 @@ footer {
     
     .hero h1 {
         font-size: 2rem;
+    }
+
+    .news-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(5, auto);
+    }
+
+    .rankings-table th, .rankings-table td {
+        padding: 8px;
+        font-size: 14px;
     }
 }
