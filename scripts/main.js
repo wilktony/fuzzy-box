@@ -236,3 +236,74 @@ window.addEventListener('resize', () => {
     canvas.height = topSection.clientHeight;
     init();
 });
+
+window.onload = async function() {
+    await tsParticles.load("tsparticles", {
+        particles: {
+            number: {
+                value: 50,
+                density: {
+                    enable: true,
+                    value_area: 800
+                }
+            },
+            color: {
+                value: "#ffffff"
+            },
+            opacity: {
+                value: 0.3,
+                random: false
+            },
+            size: {
+                value: 3,
+                random: true
+            },
+            links: {
+                enable: true,
+                distance: 208,
+                color: "#26AC7F",
+                opacity: 0.3,
+                width: 1
+            },
+            move: {
+                enable: true,
+                speed: 6,
+                direction: "none",
+                random: true,
+                straight: false,
+                outModes: "out"
+            }
+        },
+        interactivity: {
+            detectsOn: "canvas",
+            events: {
+                onHover: {
+                    enable: true,
+                    mode: "grab"
+                },
+                onClick: {
+                    enable: true,
+                    mode: "repulse"
+                },
+                resize: true
+            },
+            modes: {
+                grab: {
+                    distance: 200,
+                    links: {
+                        opacity: 0.8,
+                        color: "#1FC083"
+                    }
+                },
+                repulse: {
+                    distance: 300,
+                    duration: 0.4
+                }
+            }
+        },
+        background: {
+            color: "#f4f4f4"  // Set your desired background color
+        },
+        detectRetina: true
+    });
+};
