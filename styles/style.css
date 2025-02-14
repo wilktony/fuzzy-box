@@ -145,7 +145,12 @@ body {
 .hero {
     background-color: #f4f4f4;
     text-align: center;
-    padding: 4rem 2rem;
+    /* padding: 4rem 2rem; */
+}
+
+#top {
+    box-sizing: border-box;
+    min-height: 10vh; /* Adjust this value as needed */
 }
 
 .hero h1 {
@@ -155,7 +160,7 @@ body {
 
 /* News Section */
 .news-section {
-    padding: 3rem 2rem;
+    padding: 3rem 2rem; 
 }
 
 .news-grid {
