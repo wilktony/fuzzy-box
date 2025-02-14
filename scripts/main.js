@@ -135,7 +135,7 @@ const topSection = document.getElementById('top');
 topSection.appendChild(canvas);
 const ctx = canvas.getContext('2d');
 canvas.width = topSection.clientWidth;
-canvas.height = Math.min(topSection.clientHeight,50);
+canvas.height = Math.min(topSection.clientHeight,40);
 // console.log(topSection.clientHeight);
 
 const gloveImage = new Image();
@@ -241,14 +241,14 @@ window.onload = async function() {
     await tsParticles.load("tsparticles", {
         particles: {
             number: {
-                value: 50,
+                value: 75,
                 density: {
                     enable: true,
                     value_area: 800
                 }
             },
             color: {
-                value: "#ffffff"
+                value: ["#FF1493", "#00FF00", "#FF00FF"]
             },
             opacity: {
                 value: 0.3,
@@ -261,13 +261,13 @@ window.onload = async function() {
             links: {
                 enable: true,
                 distance: 208,
-                color: "#26AC7F",
-                opacity: 0.3,
+                color: "#FF1493",
+                opacity: 0.4,
                 width: 1
             },
             move: {
                 enable: true,
-                speed: 6,
+                speed: 2,
                 direction: "none",
                 random: true,
                 straight: false,
@@ -291,8 +291,8 @@ window.onload = async function() {
                 grab: {
                     distance: 200,
                     links: {
-                        opacity: 0.8,
-                        color: "#1FC083"
+                        opacity: 0.5,
+                        color: "#FF1493"
                     }
                 },
                 repulse: {
@@ -302,7 +302,7 @@ window.onload = async function() {
             }
         },
         background: {
-            color: "#f4f4f4"  // Set your desired background color
+            color: "#000000"  // Set your desired background color
         },
         detectRetina: true
     });

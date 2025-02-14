@@ -152,6 +152,13 @@ main {
     /* padding: 4rem 2rem; */
 }
 
+h1 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
 #top {
     box-sizing: border-box;
     min-height: 10vh; /* Adjust this value as needed */
@@ -165,6 +172,26 @@ main {
 /* News Section */
 .news-section {
     padding: 3rem 2rem; 
+}
+
+.news-section h2 {
+    color: #fff;
+}
+
+.rankings-section h2 {
+    color: #fff;
+}
+
+.schedule-section h2 {
+    color: #fff;
+}
+
+.schedule-section h3 {
+    color: #fff;
+}
+
+.schedule-section p {
+    color: #fff;
 }
 
 .news-grid {
@@ -313,6 +340,51 @@ footer {
     color: #fff;
     text-align: center;
     padding: 1rem;
+    margin-top: 2rem;
+}
+
+.quote-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    position: relative;
+}
+
+.quote {
+    font-size: 1.8rem;
+    font-style: italic;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+    position: relative;
+    padding: 0 3rem;
+}
+
+.quote::before,
+.quote::after {
+    content: '"';
+    font-size: 4rem;
+    color: #ffd700;
+    position: absolute;
+    height: 3rem;
+    line-height: 1;
+}
+
+.quote::before {
+    left: 0;
+    top: -1rem;
+}
+
+.quote::after {
+    right: 0;
+    bottom: -2rem;
+}
+
+.author {
+    font-size: 1.2rem;
+    color: #ffd700;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
     margin-top: 2rem;
 }
 
