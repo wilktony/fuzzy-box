@@ -388,8 +388,24 @@ footer {
     margin-top: 2rem;
 }
 
+/* Add this outside the media query to ensure it applies at all screen sizes */
+#top canvas {
+    max-height: 40px;
+    height: 40px;
+}
+   
 /* Responsive Design */
 @media (max-width: 768px) {
+    #top canvas {
+        max-height: 40px !important;
+        height: 40px !important;
+        width: 100% !important;
+        touch-action: none;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        user-select: none;
+    }
+
     .nav-links {
         display: none;
     }

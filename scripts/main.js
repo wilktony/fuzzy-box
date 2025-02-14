@@ -135,7 +135,8 @@ const topSection = document.getElementById('top');
 topSection.appendChild(canvas);
 const ctx = canvas.getContext('2d');
 canvas.width = topSection.clientWidth;
-canvas.height = Math.min(topSection.clientHeight,40);
+// Add a maximum height constraint of 40px
+canvas.height = Math.min(window.innerWidth <= 768 ? 40 : topSection.clientHeight, 40);
 // console.log(topSection.clientHeight);
 
 const gloveImage = new Image();
@@ -233,7 +234,7 @@ gloveImage.onload = gloveImageTwo.onload = () => {
 
 window.addEventListener('resize', () => {
     canvas.width = topSection.clientWidth;
-    canvas.height = topSection.clientHeight;
+    canvas.height = Math.min(window.innerWidth <= 768 ? 40 : topSection.clientHeight, 40);
     init();
 });
 
