@@ -308,3 +308,49 @@ window.onload = async function() {
         detectRetina: true
     });
 };
+
+// List of quotes
+const quotes = [
+    { text: "Pain is just weakness leaving the body", author: "  Oleksandr Usyk " },
+    { text: "Everyone has a plan until they get punched in the face", author: "  Mike Tyson " },
+    { text: "Sure the fight was fixed, I fixed it with a right hand", author: "  George Foreman " },
+    { text: "To see a man beaten not by a better opponent but by himself is a tragedy", author: "  Cus D'Amato " },
+    { text: "The three toughest fighters I ever fought were Sugar Ray Robinson, Sugar Ray Robinson and Sugar Ray Robinson. I fought Sugar so many times, I'm surprised I'm not diabetic", author: "  Jake LaMotta " },
+    { text: "The hero and the coward both feel the same thing, but the hero uses his fear, projects it onto his opponent, while the coward runs. It's the same thing, fear, but it's what you do with it that matters.", author: "  Cus D'Amato "},
+    { text: "Earnie Shavers could punch you in the neck and break your ankle.", author: "  Randall Tex Cobb "}
+];
+
+let index = 0;
+    
+    function changeQuote() {
+        index = (index + 1) % quotes.length; // Cycle through quotes
+        document.getElementById("quote").textContent = quotes[index].text;
+        document.getElementById("author").textContent = quotes[index].author;
+    }
+
+    // Change quote every 5 seconds
+    setInterval(changeQuote, 5000);
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const articles = document.querySelectorAll(".news-card");
+        const loadMoreBtn = document.getElementById("loadMoreBtn");
+        let visibleArticles = 10; // Initially show 10
+    
+        loadMoreBtn.addEventListener("click", function () {
+            let hiddenArticles = 0;
+            
+            // Show next 5 hidden articles
+            for (let i = visibleArticles; i < visibleArticles + 5 && i < articles.length; i++) {
+                articles[i].style.display = "block";
+                hiddenArticles++;
+            }
+    
+            visibleArticles += hiddenArticles; // Update count
+    
+            // Hide button if no more articles left to show
+            if (visibleArticles >= articles.length) {
+                loadMoreBtn.style.display = "none";
+            }
+        });
+    });
+    

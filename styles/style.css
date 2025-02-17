@@ -202,10 +202,31 @@ h1 {
 }
 
 .news-card {
+    display: none; /* Hide news cards by default */
     position: relative;
     overflow: hidden;
     background: #fff;
     border-radius: 8px;    
+}
+
+.news-card:nth-child(-n+10) {
+    display: block; /* Show only the first 10 */
+}
+
+#loadMoreBtn {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #ffd700;
+    color: #000;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#loadMoreBtn:hover {
+    background-color: #e6c300;
 }
 
 /* Fight countdown display */
@@ -344,7 +365,7 @@ footer {
 }
 
 .quote-container {
-    max-width: 800px;
+    max-width: 1000px;
     margin: 0 auto;
     padding: 2rem;
     position: relative;
